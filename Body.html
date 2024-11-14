@@ -8,7 +8,7 @@ HTML_TEMPLATE = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dalton Ellscheid - Entrepreneur, Visionary, and Content Creator. Discover insights into business ventures, creative projects, and true crime investigations.">
+    <meta name="description" content="Dalton Ellscheid - Entrepreneur, Visionary, and Content Creator. Discover insights into business ventures, creative projects, and sustainability initiatives.">
     <title>Dalton Ellscheid</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap">
@@ -62,6 +62,33 @@ HTML_TEMPLATE = """
             border: none;
             cursor: pointer;
         }
+        .projects-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .project-item {
+            flex: 1 1 calc(33% - 1.5rem);
+            background: #fff;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .interactive {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .interactive button {
+            padding: 1rem;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .hidden-message {
+            display: none;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -71,7 +98,6 @@ HTML_TEMPLATE = """
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#true-crime">True Crime</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -84,22 +110,21 @@ HTML_TEMPLATE = """
 
     <section id="about" class="container">
         <h2>About Me</h2>
-        <p>Hi, I'm Dalton Ellscheid. I thrive on combining abstract reasoning with practical entrepreneurship. Whether it's exploring the depths of true crime or diving into creative business ventures, I seek to bring originality and depth to everything I do. Currently, I'm residing in Waskesiu, leading sustainable projects, and exploring true crime investigations with my partner, Sid.</p>
+        <p>Hi, I'm Dalton Ellscheid. I thrive on combining abstract reasoning with practical entrepreneurship. Whether it's exploring creative business ventures or diving into sustainable projects, I seek to bring originality and depth to everything I do. Currently, I'm residing in Waskesiu, leading sustainable projects and building community initiatives.</p>
     </section>
 
     <section id="projects" class="container">
         <h2>Projects</h2>
-        <h3>RoadHouse: Golf Casino</h3>
-        <p>An exclusive project blending opulence with nature. A luxurious wilderness-themed oasis, mixing the high life with natural aesthetics.</p>
-        <h3>Snap Autowheels</h3>
-        <p>A campaign and lead generation business focusing on auto sales. Creating targeted marketing and digital strategies to reach new clients.</p>
-        <h3>Happy Campers</h3>
-        <p>A sustainable project at Waskesiu, curating a tribe of like-minded individuals to create a better tomorrow through local resources.</p>
-    </section>
-
-    <section id="true-crime" class="container">
-        <h2>True Crime Investigations</h2>
-        <p>My partner Sid and I have been exploring true crime stories, connecting dots, and unraveling mysteries. Stay tuned for our latest findings and discussions in this intriguing field.</p>
+        <div class="projects-list">
+            <div class="project-item">
+                <h3>Snap Autowheels</h3>
+                <p>A campaign and lead generation business focusing on auto sales. Creating targeted marketing and digital strategies to reach new clients.</p>
+            </div>
+            <div class="project-item">
+                <h3>Happy Campers</h3>
+                <p>A sustainable project at Waskesiu, curating a tribe of like-minded individuals to create a better tomorrow through local resources.</p>
+            </div>
+        </div>
     </section>
 
     <section id="contact" class="container">
@@ -112,24 +137,25 @@ HTML_TEMPLATE = """
         </form>
     </section>
 
+    <section class="interactive container">
+        <h2>Interactive Fun</h2>
+        <button onclick="revealMessage()">Click Me for a Surprise!</button>
+        <p id="hidden-message" class="hidden-message">Hello there! Thanks for exploring my world. Let's make amazing things happen!</p>
+    </section>
+
     <footer class="container">
         <p>&copy; 2024 Dalton Ellscheid. All rights reserved.</p>
     </footer>
+
+    <script>
+        function revealMessage() {
+            const message = document.getElementById('hidden-message');
+            if (message.style.display === 'none' || message.style.display === '') {
+                message.style.display = 'block';
+            } else {
+                message.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
-"""
-
-@app.route('/')
-def home():
-    return render_template_string(HTML_TEMPLATE)
-
-@app.route('/contact', methods=['POST'])
-def contact():
-    name = request.form['name']
-    email = request.form['email']
-    message = request.form['message']
-    # Here, you can add functionality to process the message (e.g., send an email, save to a database, etc.)
-    return f"Thank you, {name}! Your message has been received. We'll get back to you shortly."
-
-if __name__ == "__main__":
-    app.run(debug=True)
