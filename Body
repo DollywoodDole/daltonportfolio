@@ -1,0 +1,135 @@
+from flask import Flask, render_template_string, request
+
+app = Flask(__name__)
+
+HTML_TEMPLATE = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dalton Ellscheid - Entrepreneur, Visionary, and Content Creator. Discover insights into business ventures, creative projects, and true crime investigations.">
+    <title>Dalton Ellscheid</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hero-section {
+            background: #555;
+            color: #fff;
+            padding: 3rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ccc;
+        }
+        .contact-form button {
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dalton Ellscheid</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#true-crime">True Crime</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <h2>Welcome to My World</h2>
+        <p>Entrepreneur, Visionary, Content Creator - Sharing insights into my journey through business, creativity, and unique endeavors.</p>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>Hi, I'm Dalton Ellscheid. I thrive on combining abstract reasoning with practical entrepreneurship. Whether it's exploring the depths of true crime or diving into creative business ventures, I seek to bring originality and depth to everything I do. Currently, I'm residing in Waskesiu, leading sustainable projects, and exploring true crime investigations with my partner, Sid.</p>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <h3>RoadHouse: Golf Casino</h3>
+        <p>An exclusive project blending opulence with nature. A luxurious wilderness-themed oasis, mixing the high life with natural aesthetics.</p>
+        <h3>Snap Autowheels</h3>
+        <p>A campaign and lead generation business focusing on auto sales. Creating targeted marketing and digital strategies to reach new clients.</p>
+        <h3>Happy Campers</h3>
+        <p>A sustainable project at Waskesiu, curating a tribe of like-minded individuals to create a better tomorrow through local resources.</p>
+    </section>
+
+    <section id="true-crime" class="container">
+        <h2>True Crime Investigations</h2>
+        <p>My partner Sid and I have been exploring true crime stories, connecting dots, and unraveling mysteries. Stay tuned for our latest findings and discussions in this intriguing field.</p>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <form action="/contact" method="post" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="container">
+        <p>&copy; 2024 Dalton Ellscheid. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+"""
+
+@app.route('/')
+def home():
+    return render_template_string(HTML_TEMPLATE)
+
+@app.route('/contact', methods=['POST'])
+def contact():
+    name = request.form['name']
+    email = request.form['email']
+    message = request.form['message']
+    # Here, you can add functionality to process the message (e.g., send an email, save to a database, etc.)
+    return f"Thank you, {name}! Your message has been received. We'll get back to you shortly."
+
+if __name__ == "__main__":
+    app.run(debug=True)
