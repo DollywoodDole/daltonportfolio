@@ -20,10 +20,6 @@
             color: #ffd700;
             padding: 5rem;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 1s ease-in-out;
         }
         .container {
             max-width: 960px;
@@ -32,9 +28,6 @@
             background: #1c1c1c;
             border-radius: 8px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 1s ease-in-out;
         }
         .contact-form input, .contact-form textarea {
             width: 100%;
@@ -78,9 +71,6 @@
         .interactive {
             text-align: center;
             margin-top: 3rem;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 1s ease-in-out;
         }
         .interactive button {
             padding: 1rem;
@@ -107,9 +97,6 @@
             background: #1c1c1c;
             color: #ffd700;
             margin-top: 3rem;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 1s ease-in-out;
         }
     </style>
 </head>
@@ -139,3 +126,44 @@
             <div class="project-item">
                 <h3>Deuce Vodka</h3>
                 <p>Deuce Vodka is where passion meets craftsmanship. We're creating a vodka experience like no other—smooth, premium, and always ready for a good time. Cheers to that. <a href="https://deucevodka.com" target="_blank">Learn more</a></p>
+            </div>
+            <div class="project-item">
+                <h3>Dalton's Twitch Channel</h3>
+                <p>Join me on Twitch for gaming, creativity, and community vibes. It's all about fun, innovation, and connecting with people. Let's build something awesome together. <a href="https://twitch.tv/dollywooddole" target="_blank">Check it out</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, collaborate, or learn more about my projects, reach out at <a href="mailto:daltonellscheid@gmail.com">daltonellscheid@gmail.com</a>.</p>
+        <form action="/contact" method="post" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <section class="interactive container">
+        <h2>Interactive Fun</h2>
+        <button onclick="revealMessage()">Click Me for a Surprise!</button>
+        <p id="hidden-message" class="hidden-message">Hey, thanks for being here! Let's create something amazing together.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Dalton Ellscheid. Let's do great things together.</p>
+    </footer>
+
+    <script>
+        function revealMessage() {
+            const message = document.getElementById('hidden-message');
+            if (message.style.display === 'none' || message.style.display === '') {
+                message.style.display = 'block';
+            } else {
+                message.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
