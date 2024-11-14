@@ -1,8 +1,4 @@
-from flask import Flask, render_template_string, request
 
-app = Flask(__name__)
-
-HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,15 +123,15 @@ HTML_TEMPLATE = """
         <div class="projects-list">
             <div class="project-item">
                 <h3>Snap Autowheels</h3>
-                <p>Snap Autowheels is all about connecting buyers with the right cars. We're bringing smart marketing and a fresh approach to auto sales, helping clients find their perfect match.</p>
+                <p>Snap Autowheels is all about connecting buyers with the right cars. We're bringing smart marketing and a fresh approach to auto sales, helping clients find their perfect match. <a href="https://snapautowheels.com" target="_blank">Learn more</a></p>
             </div>
             <div class="project-item">
                 <h3>Deuce Vodka</h3>
-                <p>Deuce Vodka is where passion meets craftsmanship. We're creating a vodka experience like no other—smooth, premium, and always ready for a good time. Cheers to that.</p>
+                <p>Deuce Vodka is where passion meets craftsmanship. We're creating a vodka experience like no other—smooth, premium, and always ready for a good time. Cheers to that. <a href="https://deucevodka.com" target="_blank">Learn more</a></p>
             </div>
             <div class="project-item">
                 <h3>Dalton's Twitch Channel</h3>
-                <p>Join me on Twitch for gaming, creativity, and community vibes. It's all about fun, innovation, and connecting with people. Let's build something awesome together.</p>
+                <p>Join me on Twitch for gaming, creativity, and community vibes. It's all about fun, innovation, and connecting with people. Let's build something awesome together. <a href="https://twitch.tv/dollywooddole" target="_blank">Check it out</a></p>
             </div>
         </div>
     </section>
@@ -175,10 +171,6 @@ HTML_TEMPLATE = """
 </html>
 """
 
-@app.route('/')
-def home():
-    return render_template_string(HTML_TEMPLATE)
-
 @app.route('/contact', methods=['POST'])
 def contact():
     name = request.form['name']
@@ -187,5 +179,4 @@ def contact():
     # Here, you can add functionality to process the message (e.g., send an email, save to a database, etc.)
     return f"Thank you, {name}! Your message has been received. We'll get back to you shortly."
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
