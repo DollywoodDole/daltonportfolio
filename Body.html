@@ -17,50 +17,68 @@ HTML_TEMPLATE = """
             font-family: 'Raleway', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #1A237E;
+            color: #FFD700;
         }
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem;
+            background: #0D47A1;
+            color: #FFD700;
+            padding: 1.5rem;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         nav ul {
             list-style: none;
             padding: 0;
+            text-align: center;
         }
         nav ul li {
             display: inline;
-            margin: 0 1rem;
+            margin: 0 2rem;
         }
         nav a {
-            color: #fff;
+            color: #FFD700;
             text-decoration: none;
+            font-weight: 600;
+        }
+        nav a:hover {
+            color: #FFC107;
         }
         .hero-section {
-            background: #555;
-            color: #fff;
-            padding: 3rem;
+            background: linear-gradient(135deg, #0D47A1 50%, #1A237E);
+            color: #FFD700;
+            padding: 5rem;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         .container {
             max-width: 960px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 3rem auto;
+            padding: 1.5rem;
+            background: #1E2761;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
         .contact-form input, .contact-form textarea {
             width: 100%;
             margin-bottom: 1rem;
             padding: 1rem;
-            border: 1px solid #ccc;
+            border: 2px solid #FFD700;
+            border-radius: 4px;
+            background: #f4f4f4;
         }
         .contact-form button {
             padding: 1rem;
-            background: #333;
-            color: #fff;
+            background: #FFD700;
+            color: #0D47A1;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .contact-form button:hover {
+            background: #FFC107;
         }
         .projects-list {
             display: flex;
@@ -69,25 +87,45 @@ HTML_TEMPLATE = """
         }
         .project-item {
             flex: 1 1 calc(33% - 1.5rem);
-            background: #fff;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: #283593;
+            padding: 1.5rem;
+            border: 2px solid #FFD700;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .project-item:hover {
+            transform: scale(1.05);
         }
         .interactive {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
         .interactive button {
             padding: 1rem;
-            background: #007BFF;
-            color: #fff;
+            background: #FFD700;
+            color: #0D47A1;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .interactive button:hover {
+            background: #FFC107;
         }
         .hidden-message {
             display: none;
             margin-top: 1rem;
+            color: #FFD700;
+            font-style: italic;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #0D47A1;
+            color: #FFD700;
+            margin-top: 3rem;
         }
     </style>
 </head>
@@ -143,7 +181,7 @@ HTML_TEMPLATE = """
         <p id="hidden-message" class="hidden-message">Hello there! Thanks for exploring my world. Let's make amazing things happen!</p>
     </section>
 
-    <footer class="container">
+    <footer>
         <p>&copy; 2024 Dalton Ellscheid. All rights reserved.</p>
     </footer>
 
@@ -159,3 +197,19 @@ HTML_TEMPLATE = """
     </script>
 </body>
 </html>
+"""
+
+@app.route('/')
+def home():
+    return render_template_string(HTML_TEMPLATE)
+
+@app.route('/contact', methods=['POST'])
+def contact():
+    name = request.form['name']
+    email = request.form['email']
+    message = request.form['message']
+    # Here, you can add functionality to process the message (e.g., send an email, save to a database, etc.)
+    return f"Thank you, {name}! Your message has been received. We'll get back to you shortly."
+
+if __name__ == "__main__":
+    app.run(debug=True)
