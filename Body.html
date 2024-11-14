@@ -17,12 +17,12 @@ HTML_TEMPLATE = """
             font-family: 'Roboto Slab', serif;
             margin: 0;
             padding: 0;
-            background-color: #1c1c1c;
-            color: #ffcc00;
+            background-color: #000;
+            color: #ffffff;
         }
         .hero-section {
             background: url('https://example.com/hero-background.jpg') center/cover no-repeat;
-            color: #ffcc00;
+            color: #ffd700;
             padding: 5rem;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -31,7 +31,7 @@ HTML_TEMPLATE = """
             max-width: 960px;
             margin: 3rem auto;
             padding: 1.5rem;
-            background: #2c2c2c;
+            background: #1c1c1c;
             border-radius: 8px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
@@ -39,15 +39,15 @@ HTML_TEMPLATE = """
             width: 100%;
             margin-bottom: 1rem;
             padding: 1rem;
-            border: 2px solid #ffcc00;
+            border: 2px solid #ffd700;
             border-radius: 4px;
-            background: #444;
-            color: #ffcc00;
+            background: #333;
+            color: #ffffff;
         }
         .contact-form button {
             padding: 1rem;
-            background: #ffcc00;
-            color: #1c1c1c;
+            background: #ffd700;
+            color: #000;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -55,7 +55,7 @@ HTML_TEMPLATE = """
             transition: background 0.3s ease;
         }
         .contact-form button:hover {
-            background: #ffb700;
+            background: #ffbf00;
         }
         .projects-list {
             display: flex;
@@ -66,7 +66,7 @@ HTML_TEMPLATE = """
             flex: 1 1 calc(33% - 1.5rem);
             background: url('https://example.com/project-background.jpg') center/cover no-repeat;
             padding: 1.5rem;
-            border: 2px solid #ffcc00;
+            border: 2px solid #ffd700;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
@@ -80,8 +80,8 @@ HTML_TEMPLATE = """
         }
         .interactive button {
             padding: 1rem;
-            background: #ffcc00;
-            color: #1c1c1c;
+            background: #ffd700;
+            color: #000;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -89,19 +89,19 @@ HTML_TEMPLATE = """
             transition: background 0.3s ease;
         }
         .interactive button:hover {
-            background: #ffb700;
+            background: #ffbf00;
         }
         .hidden-message {
             display: none;
             margin-top: 1rem;
-            color: #ffcc00;
+            color: #ffd700;
             font-style: italic;
         }
         footer {
             text-align: center;
             padding: 2rem;
-            background: #2c2c2c;
-            color: #ffcc00;
+            background: #1c1c1c;
+            color: #ffd700;
             margin-top: 3rem;
         }
     </style>
@@ -133,11 +133,16 @@ HTML_TEMPLATE = """
                 <h3>Deuce Vodka</h3>
                 <p>Deuce Vodka is where passion meets craftsmanship. We're creating a vodka experience like no other—smooth, premium, and always ready for a good time. Cheers to that.</p>
             </div>
+            <div class="project-item">
+                <h3>Dalton's Twitch Channel</h3>
+                <p>Join me on Twitch for gaming, creativity, and community vibes. It's all about fun, innovation, and connecting with people. Let's build something awesome together.</p>
+            </div>
         </div>
     </section>
 
     <section id="contact" class="container">
         <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, collaborate, or learn more about my projects, reach out at <a href="mailto:daltonellscheid@gmail.com">daltonellscheid@gmail.com</a>.</p>
         <form action="/contact" method="post" class="contact-form">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
