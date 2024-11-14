@@ -21,7 +21,7 @@ HTML_TEMPLATE = """
             color: #ffcc00;
         }
         .hero-section {
-            background: linear-gradient(135deg, #f08080 50%, #ffa500);
+            background: url('https://example.com/hero-background.jpg') center/cover no-repeat;
             color: #ffcc00;
             padding: 5rem;
             text-align: center;
@@ -64,7 +64,7 @@ HTML_TEMPLATE = """
         }
         .project-item {
             flex: 1 1 calc(33% - 1.5rem);
-            background: #e67e22;
+            background: url('https://example.com/project-background.jpg') center/cover no-repeat;
             padding: 1.5rem;
             border: 2px solid #ffcc00;
             border-radius: 8px;
@@ -115,6 +115,11 @@ HTML_TEMPLATE = """
     <section id="about" class="container">
         <h2>About Me</h2>
         <p>I'm an entrepreneur with a knack for creativity and a love for the unconventional. I thrive on blending big ideas with real-world action. Right now, I'm based in Waskesiu, working on sustainable projects and building community-driven initiatives. Always looking for new challenges and fresh opportunities.</p>
+    </section>
+
+    <section id="mission" class="container">
+        <h2>Mission Statement</h2>
+        <p>My mission is simple: to inspire creativity, lead with passion, and drive change. Through innovative projects, community-focused initiatives, and a dedication to sustainability, I'm all about creating a meaningful impact—one venture at a time.</p>
     </section>
 
     <section id="projects" class="container">
