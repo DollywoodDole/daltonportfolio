@@ -17,36 +17,12 @@ HTML_TEMPLATE = """
             font-family: 'Roboto Slab', serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #FFD700;
-        }
-        header {
-            background: #1E88E5;
-            color: #FFD700;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 2rem;
-        }
-        nav a {
-            color: #FFD700;
-            text-decoration: none;
-            font-weight: 700;
-        }
-        nav a:hover {
-            color: #FFC107;
+            background-color: #1c1c1c;
+            color: #ffcc00;
         }
         .hero-section {
-            background: linear-gradient(135deg, #1E88E5 50%, #1565C0);
-            color: #FFD700;
+            background: linear-gradient(135deg, #f08080 50%, #ffa500);
+            color: #ffcc00;
             padding: 5rem;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -55,7 +31,7 @@ HTML_TEMPLATE = """
             max-width: 960px;
             margin: 3rem auto;
             padding: 1.5rem;
-            background: #1E1E1E;
+            background: #2c2c2c;
             border-radius: 8px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
@@ -63,15 +39,15 @@ HTML_TEMPLATE = """
             width: 100%;
             margin-bottom: 1rem;
             padding: 1rem;
-            border: 2px solid #FFD700;
+            border: 2px solid #ffcc00;
             border-radius: 4px;
-            background: #2C2C2C;
-            color: #FFD700;
+            background: #444;
+            color: #ffcc00;
         }
         .contact-form button {
             padding: 1rem;
-            background: #FFD700;
-            color: #1E88E5;
+            background: #ffcc00;
+            color: #1c1c1c;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -79,7 +55,7 @@ HTML_TEMPLATE = """
             transition: background 0.3s ease;
         }
         .contact-form button:hover {
-            background: #FFC107;
+            background: #ffb700;
         }
         .projects-list {
             display: flex;
@@ -88,9 +64,9 @@ HTML_TEMPLATE = """
         }
         .project-item {
             flex: 1 1 calc(33% - 1.5rem);
-            background: #283593;
+            background: #e67e22;
             padding: 1.5rem;
-            border: 2px solid #FFD700;
+            border: 2px solid #ffcc00;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
@@ -104,8 +80,8 @@ HTML_TEMPLATE = """
         }
         .interactive button {
             padding: 1rem;
-            background: #FFD700;
-            color: #1E88E5;
+            background: #ffcc00;
+            color: #1c1c1c;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -113,43 +89,32 @@ HTML_TEMPLATE = """
             transition: background 0.3s ease;
         }
         .interactive button:hover {
-            background: #FFC107;
+            background: #ffb700;
         }
         .hidden-message {
             display: none;
             margin-top: 1rem;
-            color: #FFD700;
+            color: #ffcc00;
             font-style: italic;
         }
         footer {
             text-align: center;
             padding: 2rem;
-            background: #1E88E5;
-            color: #FFD700;
+            background: #2c2c2c;
+            color: #ffcc00;
             margin-top: 3rem;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Dalton Ellscheid</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <section id="hero" class="hero-section">
         <h2>Welcome to My World</h2>
-        <p>Entrepreneur, Visionary, Content Creator - Sharing insights into my journey through business, creativity, and unique endeavors.</p>
+        <p>Hey there! I'm Dalton. Whether it's making waves in the business world, mixing things up with creative projects, or diving headfirst into exciting ventures, I'm all in. Let's make things happen.</p>
     </section>
 
     <section id="about" class="container">
         <h2>About Me</h2>
-        <p>Hi, I'm Dalton Ellscheid. I thrive on combining abstract reasoning with practical entrepreneurship. Whether it's exploring creative business ventures or diving into sustainable projects, I seek to bring originality and depth to everything I do. Currently, I'm residing in Waskesiu, leading sustainable projects and building community initiatives.</p>
+        <p>I'm an entrepreneur with a knack for creativity and a love for the unconventional. I thrive on blending big ideas with real-world action. Right now, I'm based in Waskesiu, working on sustainable projects and building community-driven initiatives. Always looking for new challenges and fresh opportunities.</p>
     </section>
 
     <section id="projects" class="container">
@@ -157,11 +122,11 @@ HTML_TEMPLATE = """
         <div class="projects-list">
             <div class="project-item">
                 <h3>Snap Autowheels</h3>
-                <p>A campaign and lead generation business focusing on auto sales. Creating targeted marketing and digital strategies to reach new clients.</p>
+                <p>Snap Autowheels is all about connecting buyers with the right cars. We're bringing smart marketing and a fresh approach to auto sales, helping clients find their perfect match.</p>
             </div>
             <div class="project-item">
-                <h3>Happy Campers</h3>
-                <p>A sustainable project at Waskesiu, curating a tribe of like-minded individuals to create a better tomorrow through local resources.</p>
+                <h3>Deuce Vodka</h3>
+                <p>Deuce Vodka is where passion meets craftsmanship. We're creating a vodka experience like no other—smooth, premium, and always ready for a good time. Cheers to that.</p>
             </div>
         </div>
     </section>
@@ -179,11 +144,11 @@ HTML_TEMPLATE = """
     <section class="interactive container">
         <h2>Interactive Fun</h2>
         <button onclick="revealMessage()">Click Me for a Surprise!</button>
-        <p id="hidden-message" class="hidden-message">Hello there! Thanks for exploring my world. Let's make amazing things happen!</p>
+        <p id="hidden-message" class="hidden-message">Hey, thanks for being here! Let's create something amazing together.</p>
     </section>
 
     <footer>
-        <p>&copy; 2024 Dalton Ellscheid. All rights reserved.</p>
+        <p>&copy; 2024 Dalton Ellscheid. Let's do great things together.</p>
     </footer>
 
     <script>
